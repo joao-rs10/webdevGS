@@ -168,4 +168,16 @@
                 event.target.classList.add('selected');
             });
         });
+        // Carrega o tema salvo no localStorage ou define o padrão
+        const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+        applyTheme(savedTheme);
+
+        // Marca o ponto de tema inicial como selecionado
+        const initialDot = document.querySelector(`.theme-dot[data-theme="${savedTheme}"]`);
+        if (initialDot) {
+            initialDot.classList.add('selected');
+        }
+    }
+});
+
 
