@@ -323,3 +323,123 @@ p {
     font-weight: bold;
     text-align: center;
     transition: background-color 0.3s ease;
+border: none;
+    cursor: pointer;
+}
+
+/* Formulário de Contato */
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-form {
+    background-color: inherit; 
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--default-shadow-color);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-group { 
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--default-border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--default-primary-color);
+}
+
+.contact-form input.error,
+.contact-form textarea.error {
+    border-color: red;
+}
+
+.form-feedback {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    display: none; /* Escondido por padrão */
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Quiz Interativo */
+#quiz-section {
+    text-align: center;
+}
+
+#quiz-container {
+    background-color: inherit;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px var(--default-shadow-color);
+    max-width: 700px;
+    margin: 30px auto; 
+    text-align: left;
+}
+
+#question-number {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--default-secondary-color);
+    margin-bottom: 10px;
+}
+
+#question-text {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+    color: var(--default-text-color);
+}
+
+#options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.option-button {
+    background-color: #e9ecef; 
+    color: var(--default-text-color);
+    border: 1px solid var(--default-border-color);
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    text-align: left; 
+}
