@@ -133,4 +133,39 @@
             // Esconde o quiz e mostra apenas o resultado
             [questionNumberElement, questionTextElement, optionsContainer, prevQuizBtn, nextQuizBtn, submitQuizBtn].forEach(el => el.style.display = 'none');
         }
+        // Event listeners para navegação do quiz
+        prevQuizBtn.addEventListener('click', () => {
+            if (currentQuizQuestionIndex > 0) {
+                currentQuizQuestionIndex--;
+                loadQuizQuestion();
+            }
+        });
+        nextQuizBtn.addEventListener('click', () => {
+            if (currentQuizQuestionIndex < quizData.length - 1) {
+                currentQuizQuestionIndex++;
+                loadQuizQuestion();
+            }
+        });
+        submitQuizBtn.addEventListener('click', submitQuiz);
+
+        loadQuizQuestion(); // Carrega a primeira questão ao iniciar o quiz
+    }
+
+    // --- Personalização de Tema (Ícones no Menu de Navegação) ---
+    const themeDots = document.querySelectorAll('.theme-dot');
+
+    if (themeDots.length > 0) {
+        function applyTheme(themeName) {
+            body.className = ''; 
+            body.classList.add(themeName + '-theme'); 
+        }
+
+        themeDots.forEach(dot => {
+            dot.addEventListener('click', (event) => {
+                const selectedTheme = event.target.dataset.theme;
+                applyTheme(selectedTheme);
+                themeDots.forEach(d => d.classList.remove('selected'));
+                event.target.classList.add('selected');
+            });
+        });
 
