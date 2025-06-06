@@ -60,3 +60,77 @@
             formFeedback.style.display = 'block';
         });
     }
+// --- Quiz Interativo ---
+    const quizData = [
+        { question: "Qual o principal problema que o AquaLink busca resolver?", options: ["Poluição da água", "Falta de saneamento básico", "Impacto devastador das enchentes", "Desperdício de água"], answer: "Impacto devastador das enchentes" },
+        { question: "Qual tecnologia o AquaLink utiliza para monitoramento em tempo real?", options: ["Sensores de temperatura", "Sensores de nível de água com Arduino", "Câmeras de segurança", "Drones"], answer: "Sensores de nível de água com Arduino" },
+        { question: "Com qual antecedência o AquaLink visa antecipar enchentes?", options: ["1 hora", "24 horas", "Até 48h", "1 semana"], answer: "Até 48h" },
+        { question: "Qual o percentual de redução de danos humanos e econômicos que o AquaLink pretende alcançar?", options: ["30%", "50%", "70%", "90%"], answer: "70%" },
+        { question: "Para qual tipo de local o sistema AquaLink é ideal?", options: ["Grandes centros urbanos", "Locais com infraestrutura limitada", "Áreas rurais sem rios", "Montanhas"], answer: "Locais com infraestrutura limitada" },
+        { question: "Quais são os principais benefícios do AquaLink?", options: ["Alto custo e difícil instalação", "Apenas monitoramento, sem alertas", "Fácil instalação, baixo custo e alta replicabilidade", "Depende de internet de alta velocidade"], answer: "Fácil instalação, baixo custo e alta replicabilidade" },
+        { question: "Como a comunicação com a população ocorre via AquaLink?", options: ["Por telefone fixo", "Via rádio amador", "Via aplicativos com alertas em tempo real", "Por cartas"], answer: "Via aplicativos com alertas em tempo real" },
+        { question: "Além dos aplicativos, quais outros alertas são acionados automaticamente pelo AquaLink?", options: ["Alarmes de carro", "Alertas visuais (LEDs) e sonoros (buzzer)", "Luzes de rua", "Sirenes de polícia"], answer: "Alertas visuais (LEDs) e sonoros (buzzer)" },
+        { question: "O que o aplicativo AquaLink envia para os usuários em caso de risco?", options: ["Notícias do dia", "Rotas de fuga e alertas precisas", "Receitas culinárias", "Promoções de lojas"], answer: "Rotas de fuga e alertas precisas" },
+        { question: "Qual o principal objetivo do AquaLink em relação à segurança dos usuários?", options: ["Apenas informar sobre o nível da água", "Emitir alertas imediatos para garantir a segurança de todos", "Prever o clima semanalmente", "Monitorar a qualidade da água"], answer: "Emitir alertas imediatos para garantir a segurança de todos" }
+    ];
+
+    let currentQuizQuestionIndex = 0;
+    let userQuizAnswers = new Array(quizData.length).fill(null); 
+
+    const quizContainer = document.getElementById('quiz-container');
+    const questionNumberElement = document.getElementById('question-number');
+    const questionTextElement = document.getElementById('question-text');
+    const optionsContainer = document.getElementById('options-container');
+    const prevQuizBtn = document.getElementById('prev-btn');
+    const nextQuizBtn = document.getElementById('next-btn');
+    const submitQuizBtn = document.getElementById('submit-btn');
+    const resultElement = document.getElementById('result');
+
+    if (quizContainer) {
+        function loadQuizQuestion() {
+            const question = quizData[currentQuizQuestionIndex];
+            questionNumberElement.textContent = `Questão ${currentQuizQuestionIndex + 1} de ${quizData.length}`;
+            questionTextElement.textContent = question.question;
+            optionsContainer.innerHTML = ''; 
+
+            question.options.forEach((option) => {
+                const button = document.createElement('button');
+                button.textContent = option;
+                button.classList.add('option-button');
+                button.addEventListener('click', () => selectQuizAnswer(option, button));
+                // Marca a opção se já foi selecionada
+                if (userQuizAnswers[currentQuizQuestionIndex] === option) {
+                    button.classList.add('selected');
+                }
+                optionsContainer.appendChild(button);
+            });
+            updateQuizNavigationButtons();
+        }
+
+        function selectQuizAnswer(selectedOption, clickedButton) {
+            optionsContainer.querySelectorAll('.option-button').forEach(btn => btn.classList.remove('selected'));
+            clickedButton.classList.add('selected');
+            userQuizAnswers[currentQuizQuestionIndex] = selectedOption;
+        }
+
+        function updateQuizNavigationButtons() {
+            prevQuizBtn.disabled = currentQuizQuestionIndex === 0;
+            nextQuizBtn.style.display = currentQuizQuestionIndex === quizData.length - 1 ? 'none' : 'inline-block';
+            submitQuizBtn.style.display = currentQuizQuestionIndex === quizData.length - 1 ? 'inline-block' : 'none';
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            quizData.forEach((question, index) => {
+                if (userQuizAnswers[index] === question.answer) {
+                    score++;
+                }
+            });
+
+            resultElement.innerHTML = `<h4>Você acertou ${score} de ${quizData.length} questões!</h4>`;
+            resultElement.style.display = 'block';
+
+            // Esconde o quiz e mostra apenas o resultado
+            [questionNumberElement, questionTextElement, optionsContainer, prevQuizBtn, nextQuizBtn, submitQuizBtn].forEach(el => el.style.display = 'none');
+        }
+
