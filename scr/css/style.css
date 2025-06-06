@@ -87,3 +87,93 @@ body.default-theme button.option-button:hover:not(.selected) {
 }
 
 body.default-theme .contact-form input,
+body.default-theme .contact-form textarea {
+    border-color: var(--default-border-color);
+    background-color: var(--default-bg-color);
+    color: var(--default-text-color);
+}
+
+body.default-theme .form-feedback.error {
+    color: red;
+}
+
+body.default-theme .form-feedback.success {
+    color: green;
+}
+
+/* Tema Escuro */
+body.dark-theme {
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme header,
+body.dark-theme footer {
+    background-color: var(--dark-header-bg);
+    color: var(--dark-header-text);
+}
+
+body.dark-theme nav a {
+    color: var(--dark-header-text);
+}
+
+body.dark-theme nav a:hover,
+body.dark-theme nav a.active-section {
+    background-color: var(--dark-link-hover);
+}
+
+body.dark-theme .btn-primary,
+body.dark-theme button.option-button.selected {
+    background-color: var(--dark-primary-color);
+    color: #fff;
+}
+
+body.dark-theme .btn-primary:hover,
+body.dark-theme button.option-button:hover:not(.selected) {
+    background-color: var(--dark-link-hover);
+}
+
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+    border-color: var(--dark-border-color);
+    background-color: var(--dark-bg-color);
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .form-feedback.error {
+    color: #ff6b6b; /* Vermelho mais suave para tema escuro */
+}
+
+body.dark-theme .form-feedback.success {
+    color: #6bff6b; /* Verde mais suave para tema escuro */
+}
+
+
+/* Tema Verde Água */
+body.aquagreen-theme {
+    background-color: var(--aquagreen-bg-color);
+    color: var(--aquagreen-text-color);
+}
+
+body.aquagreen-theme header,
+body.aquagreen-theme footer {
+    background-color: var(--aquagreen-header-bg);
+    color: var(--aquagreen-header-text);
+}
+
+body.aquagreen-theme nav a {
+    color: var(--aquagreen-header-text);
+}
+
+body.aquagreen-theme nav a:hover,
+body.aquagreen-theme nav a.active-section {
+    background-color: var(--aquagreen-link-hover);
+}
+
+body.aquagreen-theme .btn-primary,
+body.aquagreen-theme button.option-button.selected {
+    background-color: var(--aquagreen-primary-color);
+    color: #fff;
+}
+
+body.aquagreen-theme .btn-primary:hover,
