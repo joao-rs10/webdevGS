@@ -13,5 +13,127 @@
             <div class="hamburger-menu" id="hamburger-menu">&#9776;</div>
             <nav id="main-nav">
                 <ul>
-                    
+                  <li><a href="#problema">Problema</a></li>
+                    <li><a href="#tecnologias">Tecnologias</a></li>
+                    <li><a href="#objetivos">Objetivos</a></li>
+                    <li><a href="#publico">Público-Alvo</a></li>
+                    <li><a href="#beneficios">Benefícios</a></li>
+                    <li><a href="#cotidiano">No Dia a Dia</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#quiz-section">Quiz</a></li> 
+                    <li class="theme-dots-container">
+                        <div class="theme-dot" data-theme="default" title="Tema Padrão"></div>
+                        <div class="theme-dot" data-theme="dark" title="Tema Escuro"></div>
+                        <div class="theme-dot" data-theme="aquagreen" title="Tema Verde Água"></div>
+                    </li>
 
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="problema" class="content-section">
+            <div class="container">
+                <h2>O Problema</h2>
+                <img class="enchente__rua" src="./scr/assets/imagens/problema.jpg" alt="Imagem de rua alagada por enchente">
+                <p>Comunidades vulneráveis sofrem com o impacto devastador das enchentes. A falta de avisos prévios agrava perdas materiais e riscos à vida.</p>
+                <p>O AquaLink surge para mudar essa realidade.</p>
+            </div>
+        </section>
+
+        <section id="tecnologias" class="content-section">
+            <div class="container">
+                <h2>Tecnologias Utilizadas</h2>
+                <img class="tecnologias__enchentes" src="./scr/assets/imagens/tecnologias.jpg" alt="Imagem de tecnologias de monitoramento de água">
+                <p>A solução utiliza sensores de nível de água conectados a um microcontrolador Arduino para monitoramento em tempo real.</p>
+                <p>Alertas visuais (LEDs) e sonoros (buzzer) são acionados automaticamente, e a comunicação com a população ocorre via aplicativos móveis.</p>
+            </div>
+        </section>
+
+        <section id="objetivos" class="content-section">
+            <div class="container">
+                <h2>Objetivos</h2>
+                <img class="objetivo__concluido" src="./scr/assets/imagens/objetivos.jpg" alt="Imagem ilustrativa de objetivo cumprido">
+                <p>Antecipar enchentes com até 48h de antecedência e reduzir em 70% os danos humanos e econômicos.</p>
+                <p>O AquaLink visa proteger comunidades vulneráveis, oferecendo um sistema inteligente e acessível de prevenção e emitindo alertas imediatos.</p>
+            </div>
+        </section>
+
+        <section id="publico" class="content-section">
+            <div class="container">
+                <h2>Público-Alvo</h2>
+                <img class="publico__alvo" src="./scr/assets/imagens/publico.jpg" alt="Imagem de famílias afetadas por enchentes">
+                <p>O sistema é ideal para locais com infraestrutura limitada, alcançando moradores, técnicos e gestores.</p>
+                <p>Cidadãos em geral são beneficiados pela agilidade e clareza dos alertas, garantindo maior segurança para todos.</p>
+            </div>
+        </section>
+
+        <section id="beneficios" class="content-section">
+            <div class="container">
+                <h2>Benefícios</h2>
+                <img class="beneficios__enchentes" src="./scr/assets/imagens/beneficios.jpg" alt="Imagem de solução eficaz contra enchentes">
+                <p>O AquaLink é fácil de instalar, tem baixo custo e alta replicabilidade, otimizado para comunidades com recursos limitados.</p>
+                <p>Ele oferece monitoramento em tempo real e alertas imediatos, salvando vidas e bens com eficiência e praticidade.</p>
+            </div>
+        </section>
+
+        <section id="cotidiano" class="content-section">
+            <div class="container">
+                <h2>No Dia a Dia</h2>
+                <img class="cotidiano__app" src="./scr/assets/imagens/cotidiano.jpg" alt="Imagem de aplicativo AquaLink em uso">
+                <p>O aplicativo envia rotas de fuga e alertas precisos diretamente para o celular dos usuários, informando-os prontamente sobre riscos.</p>
+                <p>A exibição contínua do nível da água e os alertas visuais/sonoros garantem que a população esteja sempre informada e preparada para agir.</p>
+            </div>
+        </section>
+
+        <section id="contato" class="content-section">
+            <div class="container contact-content">
+                <h2>Entre em Contato</h2>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                    <div id="form-feedback" class="form-feedback"></div>
+                </form>
+            </div>
+        </section>
+
+        <section id="quiz-section" class="content-section">
+            <div class="container">
+                <h2>Teste Seus Conhecimentos!</h2>
+                <div id="quiz-container">
+                    <p id="question-number"></p>
+                    <h3 id="question-text"></h3>
+                    <div id="options-container">
+                        </div>
+                    <div id="quiz-navigation">
+                        <button id="prev-btn" class="btn-primary" disabled>Anterior</button>
+                        <button id="next-btn" class="btn-primary">Próxima</button>
+                        <button id="submit-btn" class="btn-primary" style="display: none;">Ver Resultado</button>
+                    </div>
+                    <div id="result" style="display: none;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AquaLink, por um país com menos tragédias.</p>
+        </div>
+    </footer>
+
+    <script src="scr/js/script.js"></script>
+</body>
+</html>
