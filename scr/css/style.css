@@ -443,3 +443,99 @@ border: none;
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     text-align: left; 
 }
+.option-button.selected {
+    background-color: var(--default-primary-color);
+    color: #fff;
+    border-color: var(--default-primary-color);
+}
+
+.option-button:hover:not(.selected) { 
+    background-color: #dee2e6;
+}
+
+#quiz-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#quiz-navigation button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--default-secondary-color);
+    color: #fff;
+    transition: background-color 0.2s ease;
+    flex: 1; 
+}
+
+#quiz-navigation button:hover:not(:disabled) {
+    background-color: #5a6268;
+}
+
+#quiz-navigation button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#submit-btn {
+    background-color: var(--default-primary-color);
+    display: none; 
+}
+
+#submit-btn:hover {
+    background-color: var(--default-link-hover);
+}
+
+#result {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--default-primary-color);
+    display: none; 
+}
+
+/* Personalização de Tema (Ícones no Menu de Navegação) */
+.theme-dots-container {
+    display: flex;
+    gap: 8px; 
+    margin-left: 20px;   
+    position: relative;
+    z-index: 1001; 
+}
+
+.theme-dot {
+    width: 25px; 
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+    flex-shrink: 0; 
+}
+
+.theme-dot:hover {
+    transform: scale(1.1); 
+}
+
+.theme-dot.selected {
+    border-color: var(--default-primary-color); 
+}
+
+/* Cores específicas para os pontos de tema */
+.theme-dot[data-theme="default"] { background-color: #007bff; } 
+.theme-dot[data-theme="dark"] { background-color: #1a1a1a; } 
+.theme-dot[data-theme="aquagreen"] { background-color: #00897b; } 
+
+
+/* Rodapé */
+footer {
+    padding: 1.5rem 0;
+    text-align: center;
+    margin-top: auto; 
+    box-shadow: 0 -2px 5px var(--default-shadow-color);
+}
