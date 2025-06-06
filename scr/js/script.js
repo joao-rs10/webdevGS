@@ -29,3 +29,34 @@
                 feedbackMessages.push('O campo Nome é obrigatório.');
                 nameInput.classList.add('error');
             }
+             // Validação do Email
+            if (emailInput.value.trim() === '') {
+                isValid = false;
+                feedbackMessages.push('O campo Email é obrigatório.');
+                emailInput.classList.add('error');
+            } else if (!isValidEmail(emailInput.value.trim())) {
+                isValid = false;
+                feedbackMessages.push('Por favor, insira um email válido.');
+                emailInput.classList.add('error');
+            }
+
+            // Validação da Mensagem
+            if (messageInput.value.trim() === '') {
+                isValid = false;
+                feedbackMessages.push('O campo Mensagem é obrigatório.');
+                messageInput.classList.add('error');
+            }
+
+            // Exibe o feedback
+            formFeedback.className = 'form-feedback'; 
+            if (isValid) {
+                formFeedback.textContent = 'Mensagem enviada com sucesso!';
+                formFeedback.classList.add('success');
+                contactForm.reset(); 
+            } else {
+                formFeedback.innerHTML = feedbackMessages.join('<br>');
+                formFeedback.classList.add('error');
+            }
+            formFeedback.style.display = 'block';
+        });
+    }
