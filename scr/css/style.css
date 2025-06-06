@@ -258,3 +258,68 @@ header {
     width: 100%;
     height: 3px;
     background-color: #fff; 
+transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0; 
+}
+
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); 
+}
+
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* Seções de Conteúdo */
+main {
+    flex-grow: 1; 
+}
+
+section.content-section {
+    padding: 60px 20px; 
+    margin-bottom: 20px;
+    background-color: inherit; 
+    border-bottom: 1px solid var(--default-border-color); 
+}
+
+section.content-section:last-of-type {
+    border-bottom: none; 
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--default-primary-color); 
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* Estilos para imagens dentro das seções */
+.content-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+
+/* Botão Primário */
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
