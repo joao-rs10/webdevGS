@@ -1,0 +1,89 @@
+:root {
+    /* Tema Padrão (Default Theme) */
+    --default-bg-color: #f4f4f4;
+    --default-text-color: #333;
+    --default-primary-color: #007bff;
+    --default-secondary-color: #6c757d;
+    --default-header-bg: #333;
+    --default-header-text: #fff;
+    --default-link-hover: #0056b3;
+    --default-border-color: #ddd;
+    --default-shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* Tema Escuro (Dark Theme) */
+    --dark-bg-color: #1a1a1a;
+    --dark-text-color: #e0e0e0;
+    --dark-primary-color: #6a9cff;
+    --dark-secondary-color: #b0b0b0;
+    --dark-header-bg: #0d0d0d;
+    --dark-header-text: #ffffff;
+    --dark-link-hover: #4a77e0;
+    --dark-border-color: #333;
+    --dark-shadow-color: rgba(255, 255, 255, 0.1);
+
+    /* Tema Verde Água (AquaGreen Theme) */
+    --aquagreen-bg-color: #e0f2f1;
+    --aquagreen-text-color: #212121;
+    --aquagreen-primary-color: #00897b;
+    --aquagreen-secondary-color: #4db6ac;
+    --aquagreen-header-bg: #004d40;
+    --aquagreen-header-text: #ffffff;
+    --aquagreen-link-hover: #00695c;
+    --aquagreen-border-color: #a7d9d5;
+    --aquagreen-shadow-color: rgba(0, 137, 123, 0.2);
+}
+
+/*  Estilos Globais  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+}
+
+/* Estilos para Temas */
+/* Tema Padrão */
+body.default-theme {
+    background-color: var(--default-bg-color);
+    color: var(--default-text-color);
+}
+
+body.default-theme header,
+body.default-theme footer {
+    background-color: var(--default-header-bg);
+    color: var(--default-header-text);
+}
+
+body.default-theme nav a {
+    color: var(--default-header-text);
+}
+
+body.default-theme nav a:hover,
+body.default-theme nav a.active-section {
+    background-color: var(--default-link-hover);
+}
+
+body.default-theme .btn-primary,
+body.default-theme button.option-button.selected {
+    background-color: var(--default-primary-color);
+    color: #fff;
+}
+
+body.default-theme .btn-primary:hover,
+body.default-theme button.option-button:hover:not(.selected) {
+    background-color: var(--default-link-hover);
+}
+
+body.default-theme .contact-form input,
